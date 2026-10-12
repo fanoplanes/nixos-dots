@@ -32,16 +32,13 @@
   programs = {
     ripgrep.enable = true;
     fd.enable = true;
-  
     emacs.enable = true;
-    
     btop = {
       enable = true;
       settings = {
         color_theme = "TTY";
       };
     };
-    
     git = {
       enable = true;
       settings.user = {
@@ -49,7 +46,6 @@
         email = "pontryagin@protonmail.com";
       };
     };
-  
     ssh = {
       enable = true;
       enableDefaultConfig = false;
@@ -61,9 +57,7 @@
         };
       };
     };
-    
     vesktop.enable = true;
-  
     bash = {
       enable = true;
       shellAliases = {
@@ -72,7 +66,6 @@
         se = "sudoedit";
       };
     };
-    
     vim = {
       enable = true;
       settings = {

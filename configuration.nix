@@ -37,6 +37,7 @@
 
   environment.systemPackages = with pkgs; [
     vim
+    acpi-call
   ];
 
   system.stateVersion = "26.05";
