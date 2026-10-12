@@ -44,12 +44,15 @@
     
     git = {
       enable = true;
-      userName = "fanoplanes";
-      userEmail = "pontryagin@protonmail.com";
+      settings.user = {
+        name = "fanoplanes";
+        email = "pontryagin@protonmail.com";
+      };
     };
   
     ssh = {
       enable = true;
+      enableDefaultConfig = false;
       settings = {
         "github.com" = {
           HostName = "github.com";
