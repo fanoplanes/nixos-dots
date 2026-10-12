@@ -34,6 +34,17 @@
     userName = "fanoplanes";
     userEmail = "pontryagin@protonmail.com";
   };
+
+  programs.ssh = {
+    enable = true;
+    settings = {
+      "github.com" = {
+        HostName = "github.com";
+        User = "git";
+        IdentityFile = "~/.ssh/FanoPlanesGitHub";
+      };
+    };
+  };
   
   programs.vesktop.enable = true;
 
