@@ -11,7 +11,7 @@
   home.stateVersion = "26.05";
 
   home.sessionVariables = {
-    EDITOR = "emacs -nw";
+    EDITOR = "emacs";
   };
 
   home.packages = with pkgs; [
