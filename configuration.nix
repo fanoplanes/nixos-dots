@@ -12,7 +12,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = [ pkgs.linuxPackages_latest, acpi-call ];
 
   services.undervolt = {
     enable = true;
@@ -37,7 +37,6 @@
 
   environment.systemPackages = with pkgs; [
     vim
-    acpi-call
   ];
 
   system.stateVersion = "26.05";
