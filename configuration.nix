@@ -37,7 +37,7 @@
 
   environment.systemPackages = with pkgs; [
     vim
-    linuxKernel.packages.linux_7_2.acpi_call
+    linuxPackages_latest.acpi_call
   ];
 
   system.stateVersion = "26.05";
