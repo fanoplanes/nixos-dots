@@ -45,7 +45,7 @@
     coreOffset = -100;
     gpuOffset = -100;
     tempAc = 90;
-    tempBat = 60;
+    tempBat = 70;
   };
 
   nixpkgs.config.allowUnfree = true;
