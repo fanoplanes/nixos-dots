@@ -18,7 +18,7 @@
   };
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "quiet" "loglevel=2" "i915.fastboot=1"];
+  boot.kernelParams = [ "quiet" "loglevel=2" ];
 
   # trying to power off dGPU
   boot.extraModprobeConfig = ''
