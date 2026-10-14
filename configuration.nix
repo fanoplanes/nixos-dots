@@ -20,6 +20,8 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "quiet" "loglevel=2" ];
 
+  networking.modemmanager.enable = false;
+
   # trying to power off dGPU
   boot.extraModprobeConfig = ''
     blacklist nouveau
