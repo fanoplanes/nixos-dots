@@ -29,6 +29,7 @@
     racket
     gnumake
     gcc
+    openmw
   ];
 
   programs = {
