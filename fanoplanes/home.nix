@@ -27,6 +27,8 @@
     pciutils
     nps
     racket
+    gnumake
+    gcc
   ];
 
   programs = {
