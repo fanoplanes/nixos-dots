@@ -32,7 +32,6 @@
   ];
 
   programs = {
-    steam.enable = true;
     ripgrep.enable = true;
     fd.enable = true;
     emacs.enable = true;
