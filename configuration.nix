@@ -63,6 +63,7 @@
   };
 
   programs.steam.enable = true;
+  programs.sway.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
