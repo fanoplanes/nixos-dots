@@ -2,6 +2,10 @@
 
 {
   programs.firefox.enable = true;
+  programs.vim.enable = true;
+  programs.steam.enable = true;
+  programs.sway.enable = true;
+  programs.waybar.enable = true;
 
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["fanoplanes"];

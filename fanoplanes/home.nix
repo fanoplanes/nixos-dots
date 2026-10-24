@@ -17,7 +17,6 @@
   home.packages = with pkgs; [
     gimp-with-plugins 
     libreoffice
-    nixos-artwork.wallpapers.binary-black
     redhat-official-fonts
     spicetify-cli
     spotify
@@ -27,10 +26,16 @@
     pciutils
     nps
     racket
-    gnumake
-    gcc
     openmw
+    nerd-fonts._0xproto
+    s-tui
+    pavucontrol
+    slurp
+    wl-clipboard
   ];
+
+  wayland.windowManager.sway.systemd.enable = true;
+  programs.waybar.systemd.targets = [ config.wayland.systemd.target ];
 
   programs = {
     ripgrep.enable = true;
@@ -97,6 +102,13 @@
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
       '';
+    };
+  };
+
+  services.flameshot.settings = {
+    General = {
+      useGrimAdapter = true;
+      disabledGrimWarning = true;
     };
   };
 

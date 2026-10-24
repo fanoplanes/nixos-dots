@@ -20,8 +20,8 @@
   };
 
   services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+    layout = "us,sk";
+    variant = "ctrl:nocaps";
   };
 
   services.xserver.enable = false;
