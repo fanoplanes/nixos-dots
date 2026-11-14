@@ -8,7 +8,7 @@
   programs.waybar.enable = true;
 
   programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["fanoplanes"];
+  users.groups.libvirtd.members = [ "fanoplanes" ];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 

@@ -15,7 +15,7 @@
   };
 
   home.packages = with pkgs; [
-    gimp-with-plugins 
+    gimp-with-plugins
     libreoffice
     redhat-official-fonts
     spicetify-cli
@@ -32,6 +32,9 @@
     pavucontrol
     slurp
     wl-clipboard
+    keepassxc
+    nixfmt
+    qbittorrent
   ];
 
   wayland.windowManager.sway.systemd.enable = true;
@@ -82,23 +85,23 @@
       };
       extraConfig = ''
         colorscheme desert
-      
+
         set clipboard+=unnamedplus
         set termguicolors
         syntax on
         set cursorline
         set ruler
         set noerrorbells
-      
+
         set ttyfast
         set lazyredraw
         set splitbelow
-      
+
         set wildmenu
         set wildmode=longest,list
-      
+
         cnoremap W!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-      
+
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
       '';

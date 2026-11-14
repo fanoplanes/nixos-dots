@@ -1,24 +1,31 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./modules/software.nix
-      ./modules/environment.nix
+  imports = [
+    ./hardware-configuration.nix
+    ./modules/software.nix
+    ./modules/environment.nix
+  ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  boot = {
+    loader.grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+      useOSProber = true;
+    };
+    loader.efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "quiet"
+      "loglevel=2"
     ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  boot.loader.grub = {
-    enable = true;
-    device = "nodev";
-    efiSupport = true;
-    useOSProber = true;
   };
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "quiet" "loglevel=2" ];
 
   networking.modemmanager.enable = false;
 
@@ -27,7 +34,11 @@
   users.users."fanoplanes" = {
     isNormalUser = true;
     description = "FanoPlanes";
-    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "plugdev"
+    ];
     packages = with pkgs; [
     ];
   };

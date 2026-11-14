@@ -9,19 +9,26 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./configuration.nix
-        home-manager.nixosModules.default
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.fanoplanes = ./fanoplanes/home.nix;
-          };
-        }
-      ];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./configuration.nix
+          home-manager.nixosModules.default
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.fanoplanes = ./fanoplanes/home.nix;
+            };
+          }
+        ];
+      };
     };
-  };
 }
